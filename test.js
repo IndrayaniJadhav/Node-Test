@@ -28,7 +28,7 @@ readStream=fs.createReadStream(filename)
 
 									}else{
 											//if it is not a a string of alphabets, check if the word is a number
-											if(/\d/.test(word) && employeeName !=''){
+											if(/\d+/.test(word) && employeeName !=''){
 													//Check if the number length is 8 
 													if (word.length != 8) { 
 								      				  var error ='The file is not in a correct format. length of date field is not 8'
@@ -47,12 +47,15 @@ readStream=fs.createReadStream(filename)
 													    var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 													    //check if the year is a leap year and change the array accordingly
 													    if( year % 4 == 0){
-								        					monthLength[1] = 29;
+								        					monthLength[month-1] = 29;
 													    }
 													    //check if the day is correct and if it is correct increase the total number to leaves by 1
+													    
 													    if(day > 0 && day <= monthLength[month - 1]){
 													    	total =total+1
-													    	// console.log(total)
+													    }else{
+													    	var error ='The file is not in a correct format. Day is not correct'
+								      				  		readStream.emit('error', error) 
 													    }
 								    				}
 
