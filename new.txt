@@ -1,4 +1,4 @@
-rita new 20180222 20180425 20181325
-Ben test 20180320 20120327
-tom 20180530
-//
+//each line need to have a space at the end
+ritanew 20180222 20180425 20181225 
+Ben test 20180320 20180327 
+tom 20180530 
