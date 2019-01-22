@@ -1,6 +1,8 @@
 # Node-Test
-This project reads a list of employes leave and return the employees in alphabetical order along with the total number of days of leave taken.
+This project reads a list of employes leave and return the employees in alphabetical order along with the total number of days of leave taken. 
+
 Output will be at console in the format 
+
 [ { name: 'name of the employee', total: 'total number of leave taken' }]
 
 
